@@ -1,10 +1,11 @@
 package me.junioressono.core.domain.models;
 
+import me.junioressono.core.domain.exceptions.InvalidDepositAmountException;
+
 import java.math.BigDecimal;
-import java.util.UUID;
 
 public sealed abstract class Account permits SavingAccount, CheckingAccount {
-    protected final String id;
+    protected Integer id = null;
     protected String customerName;
     protected BigDecimal balance;
 
@@ -12,13 +13,17 @@ public sealed abstract class Account permits SavingAccount, CheckingAccount {
         if (initialBalance.signum() < 0)
             throw new IllegalArgumentException("Amount of deposit must be positive or zero");
 
-        this.id = UUID.randomUUID().toString();
+        //this.id = UUID.randomUUID().toString();
         this.customerName = customerName;
         this.balance = initialBalance;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
+    }
+    public void setId(Integer id) {
+        if (this.id == null)
+            this.id = id;
     }
 
     public String getCustomerName() {
@@ -33,9 +38,9 @@ public sealed abstract class Account permits SavingAccount, CheckingAccount {
         this.balance = balance;
     }
 
-    public void deposit(BigDecimal amount) {
+    public void deposit(BigDecimal amount) throws InvalidDepositAmountException {
         if (amount.signum() <= 0)
-            throw new IllegalArgumentException("Amount of deposit must be positive and non-zero");
+            throw new InvalidDepositAmountException();
         balance = balance.add(amount);
     }
 

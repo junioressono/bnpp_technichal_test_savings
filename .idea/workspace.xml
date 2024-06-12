@@ -4,32 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ca319a6-9bbc-4471-93ff-211d5ad3b997" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain/exceptions/InsufficientBalanceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain/exceptions/MonthlyWithdrawalExceedingMaximumException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain/exceptions/WithdrawalInvalidAmountException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain/models/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain/models/CheckingAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain/models/SavingAccount.java" afterDir="false" />
+    <list default="true" id="4ca319a6-9bbc-4471-93ff-211d5ad3b997" name="Changes" comment="First commit - Domain implementation DONE">
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/AppShellController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/OperationsHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/ViewHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain/exceptions/InvalidAccountTypeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain/exceptions/InvalidAccountWithInterestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain/exceptions/InvalidDepositAmountException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain/exceptions/InvalidInitialBalanceException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain/models/AccountType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain/models/AccountWithInterest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/ports/secondary/AccountRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/UseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/calculate_interest/CalculateAccountInterestInputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/calculate_interest/CalculateAccountInterestOutputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/calculate_interest/CalculateAccountInterestUseCaseHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/calculate_interest/CalculateAccountUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/create_account/CreateAccountInputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/create_account/CreateAccountOutputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/create_account/CreateAccountUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/create_account/CreateAccountUseCaseHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/deposit_money/DepositMoneyInputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/deposit_money/DepositMoneyOutputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/deposit_money/DepositMoneyUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/deposit_money/DepositMoneyUseCaseHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/display_balance/DisplayAccountBalanceInputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/display_balance/DisplayAccountBalanceOutputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/display_balance/DisplayAccountBalanceUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/display_balance/DisplayAccountBalanceUseCaseHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/withdrawal_money/WithdrawalMoneyInputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/withdrawal_money/WithdrawalMoneyOutputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/withdrawal_money/WithdrawalMoneyUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/withdrawal_money/WithdrawalMoneyUseCaseHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/infra/repository/in_memory/AccountRepositoryInMemoryHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/junioressono/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain/exceptions/InsufficientBalanceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain/exceptions/InsufficientBalanceException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain/models/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain/models/CheckingAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain/models/CheckingAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain/models/SavingAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain/models/SavingAccount.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -40,6 +63,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -60,11 +85,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Gradle.bnpp_test [:Main.main()].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/junioressono/Projects/others/technichal_tests/bnpp_test/bnpp_test/src/main/java/me/junioressono/core/domain",
+    "last_opened_file_path": "/Users/junioressono/Projects/others/technichal_tests/bnpp_test/bnpp_test/src/main/java/me/junioressono/core/use_cases/display_balance",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -75,12 +101,41 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="me.junioressono.core.domain.models" />
+      <recent name="me.junioressono.core.use_cases.create_account" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/me/junioressono/core/use_cases/display_balance" />
       <recent name="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="me.junioressono.core.domain.exceptions" />
+      <recent name="me.junioressono.core.use_cases.calculate_interest" />
+      <recent name="me.junioressono.core.use_cases.display_balance" />
+      <recent name="me.junioressono.core.use_cases.withdrawal_money" />
+      <recent name="me.junioressono.core.use_cases.deposit_money" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.junioressono.Main" />
+      <module name="bnpp_test.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.junioressono.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -98,8 +153,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1718187948177</updated>
-      <workItem from="1718187949617" duration="4020000" />
+      <workItem from="1718187949617" duration="26565000" />
     </task>
+    <task id="LOCAL-00001" summary="First commit - Domain implementation DONE">
+      <option name="closed" value="true" />
+      <created>1718192952635</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718192952635</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,16 +171,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/me/junioressono/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="First commit - Domain implementation DONE" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit - Domain implementation DONE" />
   </component>
 </project>

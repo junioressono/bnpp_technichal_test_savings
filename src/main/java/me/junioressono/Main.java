@@ -1,17 +1,45 @@
 package me.junioressono;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import me.junioressono.app.shell.AppShellController;
+import me.junioressono.core.ports.secondary.AccountRepository;
+import me.junioressono.core.use_cases.calculate_interest.CalculateAccountInterestUseCaseHandler;
+import me.junioressono.core.use_cases.create_account.CreateAccountUseCaseHandler;
+import me.junioressono.core.use_cases.create_account.CreateAccountUseCase;
+import me.junioressono.core.use_cases.deposit_money.DepositMoneyUseCaseHandler;
+import me.junioressono.core.use_cases.display_balance.DisplayAccountBalanceUseCaseHandler;
+import me.junioressono.core.use_cases.withdrawal_money.WithdrawalMoneyUseCaseHandler;
+import me.junioressono.infra.repository.in_memory.AccountRepositoryInMemoryHandler;
+
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        AccountRepository accountRepository = AccountRepositoryInMemoryHandler.getInstance();
+
+        CreateAccountUseCase createAccountUseCase =
+                CreateAccountUseCaseHandler.getInstance(accountRepository);
+
+        DepositMoneyUseCaseHandler depositMoneyUseCaseHandler =
+                DepositMoneyUseCaseHandler.getInstance(accountRepository);
+
+        WithdrawalMoneyUseCaseHandler withdrawalMoneyUseCaseHandler =
+                WithdrawalMoneyUseCaseHandler.getInstance(accountRepository);
+
+        DisplayAccountBalanceUseCaseHandler displayAccountBalanceUseCaseHandler =
+                DisplayAccountBalanceUseCaseHandler.getInstance(accountRepository);
+
+        CalculateAccountInterestUseCaseHandler calculateAccountInterestUseCaseHandler =
+                CalculateAccountInterestUseCaseHandler.getInstance(accountRepository);
+
+        AppShellController app = new AppShellController(
+                createAccountUseCase,
+                depositMoneyUseCaseHandler,
+                withdrawalMoneyUseCaseHandler,
+                displayAccountBalanceUseCaseHandler,
+                calculateAccountInterestUseCaseHandler
+        );
+
+        app.run();
+
     }
 }
