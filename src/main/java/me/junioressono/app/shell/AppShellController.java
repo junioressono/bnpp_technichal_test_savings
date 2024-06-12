@@ -1,6 +1,5 @@
 package me.junioressono.app.shell;
 
-import me.junioressono.core.ports.secondary.AccountRepository;
 import me.junioressono.core.use_cases.calculate_interest.CalculateAccountInterestUseCaseHandler;
 import me.junioressono.core.use_cases.create_account.CreateAccountUseCase;
 import me.junioressono.core.use_cases.deposit_money.DepositMoneyUseCaseHandler;

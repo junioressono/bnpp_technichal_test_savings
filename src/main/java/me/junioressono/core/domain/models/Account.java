@@ -34,10 +34,6 @@ public sealed abstract class Account permits SavingAccount, CheckingAccount {
         return balance;
     }
 
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
-    }
-
     public void deposit(BigDecimal amount) throws InvalidDepositAmountException {
         if (amount.signum() <= 0)
             throw new InvalidDepositAmountException();

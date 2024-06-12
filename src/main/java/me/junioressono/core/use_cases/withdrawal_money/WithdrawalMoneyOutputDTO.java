@@ -1,8 +1,8 @@
-package me.junioressono.core.use_cases.deposit_money;
+package me.junioressono.core.use_cases.withdrawal_money;
 
 import java.math.BigDecimal;
 
-public record DepositMoneyOutputDTO(
+public record WithdrawalMoneyOutputDTO(
         BigDecimal amount
 ){
     public static Builder builder() {
@@ -18,8 +18,8 @@ public record DepositMoneyOutputDTO(
 
 
 
-        public DepositMoneyOutputDTO build() {
-            return new DepositMoneyOutputDTO(amount);
+        public WithdrawalMoneyOutputDTO build() {
+            return new WithdrawalMoneyOutputDTO(amount);
         }
     }
 }

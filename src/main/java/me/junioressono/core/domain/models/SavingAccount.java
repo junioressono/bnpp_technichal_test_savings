@@ -7,7 +7,7 @@ import me.junioressono.core.domain.exceptions.WithdrawalInvalidAmountException;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public final class SavingAccount extends Account {
+public final class SavingAccount extends Account implements AccountWithInterest {
 
 
     private static final BigDecimal INTEREST_RATE = new BigDecimal("0.05");
@@ -43,8 +43,12 @@ public final class SavingAccount extends Account {
         monthlyWithdrawalTotal = monthlyWithdrawalTotal.add(amount);
     }
 
-    public void addMonthlyInterest() {
-        balance = balance.add(balance.multiply(INTEREST_RATE));
+
+    public BigDecimal calculateCurrentMonthInterest() {
+        var interestAmount = balance.multiply(INTEREST_RATE);
+        if (interestAmount.compareTo(BigDecimal.ZERO) > 0)
+            balance = balance.add(interestAmount);
+        return interestAmount;
     }
 
 }
