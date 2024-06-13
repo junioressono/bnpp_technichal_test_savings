@@ -1,11 +1,11 @@
-package me.junioressono.app.shell.controllers;
+package me.junioressono.app.console.controllers;
 
-import me.junioressono.app.shell.AppShell;
+import me.junioressono.app.console.AppConsole;
 
 public class LeaveApplicationController implements Controller {
-    private final AppShell shellController;
+    private final AppConsole shellController;
 
-    public LeaveApplicationController(AppShell shellController) {
+    public LeaveApplicationController(AppConsole shellController) {
         this.shellController = shellController;
     }
 

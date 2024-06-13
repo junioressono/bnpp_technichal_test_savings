@@ -1,8 +1,8 @@
-package me.junioressono.app.shell.controllers;
+package me.junioressono.app.console.controllers;
 
-import me.junioressono.app.shell.AppShell;
-import me.junioressono.app.shell.util.CustomInputReader;
-import me.junioressono.app.shell.exceptions.InvalidAccountTypeException;
+import me.junioressono.app.console.AppConsole;
+import me.junioressono.app.console.util.CustomInputReader;
+import me.junioressono.app.console.exceptions.InvalidAccountTypeException;
 import me.junioressono.core.domain.models.AccountType;
 import me.junioressono.core.use_cases.create_account.CreateAccountInputDTO;
 import me.junioressono.core.use_cases.create_account.CreateAccountOutputDTO;
@@ -10,11 +10,11 @@ import me.junioressono.core.use_cases.create_account.CreateAccountOutputDTO;
 import java.math.BigDecimal;
 
 public class CreateAccountController implements Controller {
-    private final AppShell appShell;
+    private final AppConsole appConsole;
     private final CustomInputReader customInputReader;
 
-    public CreateAccountController(AppShell appShell, CustomInputReader customInputReader) {
-        this.appShell = appShell;
+    public CreateAccountController(AppConsole appConsole, CustomInputReader customInputReader) {
+        this.appConsole = appConsole;
         this.customInputReader = customInputReader;
     }
 
@@ -26,7 +26,7 @@ public class CreateAccountController implements Controller {
                     ----------------------------------------------
                     """);
         var name = customInputReader.readString("Enter your name:");
-        var initialBalance = customInputReader.readString("Enter the initial interestAmount:");
+        var initialBalance = customInputReader.readString("Enter the initial balance amount:");
         int accountType;
 
         accountType = customInputReader.readNumber("Choose the account type (1 for checking, 2 for savings):");
@@ -39,7 +39,7 @@ public class CreateAccountController implements Controller {
                 AccountType.values()[accountType-1]
         );
 
-        CreateAccountOutputDTO account = appShell.createAccountUseCase.handle(createAccountInputDTO);
+        CreateAccountOutputDTO account = appConsole.createAccountUseCase.handle(createAccountInputDTO);
 
         System.out.printf("""
                     \n
