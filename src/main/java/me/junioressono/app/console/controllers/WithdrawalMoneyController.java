@@ -1,18 +1,18 @@
-package me.junioressono.app.shell.controllers;
+package me.junioressono.app.console.controllers;
 
-import me.junioressono.app.shell.AppShell;
-import me.junioressono.app.shell.util.CustomInputReader;
+import me.junioressono.app.console.AppConsole;
+import me.junioressono.app.console.util.CustomInputReader;
 import me.junioressono.core.use_cases.withdrawal_money.WithdrawalMoneyInputDTO;
 import me.junioressono.core.use_cases.withdrawal_money.WithdrawalMoneyOutputDTO;
 
 import java.math.BigDecimal;
 
 public class WithdrawalMoneyController implements Controller {
-    private final AppShell appShell;
+    private final AppConsole appConsole;
     private final CustomInputReader customInputReader;
 
-    public WithdrawalMoneyController(AppShell appShell, CustomInputReader customInputReader) {
-        this.appShell = appShell;
+    public WithdrawalMoneyController(AppConsole appConsole, CustomInputReader customInputReader) {
+        this.appConsole = appConsole;
         this.customInputReader = customInputReader;
     }
 
@@ -30,7 +30,7 @@ public class WithdrawalMoneyController implements Controller {
                 withdrawalAccountId, new BigDecimal(withdrawalAmount)
         );
 
-        WithdrawalMoneyOutputDTO withdrawalMoneyOutputDTO = appShell
+        WithdrawalMoneyOutputDTO withdrawalMoneyOutputDTO = appConsole
                 .withdrawalMoneyUseCaseHandler
                 .handle(withdrawalMoneyInputDTO);
 

@@ -1,4 +1,4 @@
-package me.junioressono.app.shell.util;
+package me.junioressono.app.console.util;
 
 import java.util.Scanner;
 

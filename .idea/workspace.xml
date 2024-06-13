@@ -5,8 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ca319a6-9bbc-4471-93ff-211d5ad3b997" name="Changes" comment="Some aspects refactored from app layer">
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/controllers/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/controllers/LeaveApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/controllers/LeaveApplicationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/app/web/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/junioressono/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/AppShell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/app/console/AppConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/controllers/CalculateInterestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/app/console/controllers/CalculateInterestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/app/console/controllers/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/controllers/CreateAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/app/console/controllers/CreateAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/controllers/DepositMoneyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/app/console/controllers/DepositMoneyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/controllers/DisplayBalanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/app/console/controllers/DisplayBalanceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/controllers/LeaveApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/app/console/controllers/LeaveApplicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/controllers/WithdrawalMoneyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/app/console/controllers/WithdrawalMoneyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/exceptions/InvalidAccountTypeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/app/console/exceptions/InvalidAccountTypeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/util/CustomInputReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/app/console/util/CustomInputReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +36,16 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -56,14 +77,14 @@
     "Gradle.CreateAccountUseCaseTest.shouldCreateAccount.executor": "Run",
     "Gradle.CreateAccountUseCaseTest.shouldCreateCheckingAccount.executor": "Run",
     "Gradle.Download Sources.executor": "Run",
-    "Gradle.Tests in 'me.junioressono'.executor": "Coverage",
+    "Gradle.Tests in 'me.junioressono'.executor": "Run",
     "Gradle.WithdrawalMoneyUseCaseHandlerTest.executor": "Coverage",
     "Gradle.WithdrawalMoneyUseCaseHandlerTest.should_successful_withdrawal_from_checking_account.executor": "Run",
     "Gradle.WithdrawalMoneyUseCaseHandlerTest.should_successful_withdrawal_from_saving_account.executor": "Run",
     "Gradle.bnpp_test [:Main.main()].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "release/before__docs",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/junioressono/Projects/others/technichal_tests/bnpp_test/bnpp_test/src/main/java/me/junioressono",
     "node.js.detected.package.eslint": "true",
@@ -95,30 +116,19 @@
       <recent name="me.junioressono.core.use_cases.create_account" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'me.junioressono'">
-    <configuration name="CreateAccountUseCaseHandlerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;me.junioressono.core.use_cases.create_account.CreateAccountUseCaseHandlerTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.junioressono.Main" />
+      <module name="bnpp_test.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.junioressono.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Tests in 'me.junioressono'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -218,11 +228,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.Tests in 'me.junioressono'" />
         <item itemvalue="Gradle.WithdrawalMoneyUseCaseHandlerTest" />
         <item itemvalue="Gradle.WithdrawalMoneyUseCaseHandlerTest.should_successful_withdrawal_from_saving_account" />
         <item itemvalue="Gradle.WithdrawalMoneyUseCaseHandlerTest.should_successful_withdrawal_from_checking_account" />
-        <item itemvalue="Gradle.CreateAccountUseCaseHandlerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -244,7 +254,7 @@
       <updated>1718187948177</updated>
       <workItem from="1718187949617" duration="36797000" />
       <workItem from="1718233711848" duration="3108000" />
-      <workItem from="1718237056252" duration="13277000" />
+      <workItem from="1718237056252" duration="14150000" />
     </task>
     <task id="LOCAL-00001" summary="First commit - Domain implementation DONE">
       <option name="closed" value="true" />
@@ -310,7 +320,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718250329523</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Some aspects refactored from app layer">
+      <option name="closed" value="true" />
+      <created>1718250383717</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1718250383717</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

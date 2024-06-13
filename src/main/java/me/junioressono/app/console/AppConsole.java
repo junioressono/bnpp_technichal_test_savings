@@ -1,7 +1,7 @@
-package me.junioressono.app.shell;
+package me.junioressono.app.console;
 
-import me.junioressono.app.shell.controllers.*;
-import me.junioressono.app.shell.util.CustomInputReader;
+import me.junioressono.app.console.controllers.*;
+import me.junioressono.app.console.util.CustomInputReader;
 import me.junioressono.core.use_cases.calculate_interest.CalculateAccountInterestUseCaseHandler;
 import me.junioressono.core.use_cases.create_account.CreateAccountUseCase;
 import me.junioressono.core.use_cases.deposit_money.DepositMoneyUseCaseHandler;
@@ -11,7 +11,7 @@ import me.junioressono.core.use_cases.withdrawal_money.WithdrawalMoneyUseCaseHan
 import java.util.HashMap;
 import java.util.Map;
 
-public class AppShell {
+public class AppConsole {
     public CreateAccountUseCase createAccountUseCase;
     public DepositMoneyUseCaseHandler depositMoneyUseCaseHandler;
     public WithdrawalMoneyUseCaseHandler withdrawalMoneyUseCaseHandler;
@@ -20,7 +20,7 @@ public class AppShell {
 
     public boolean isRunning = true;
 
-    public AppShell(
+    public AppConsole(
             CreateAccountUseCase createAccountUseCase,
             DepositMoneyUseCaseHandler depositMoneyUseCaseHandler,
             WithdrawalMoneyUseCaseHandler withdrawalMoneyUseCaseHandler,
@@ -32,9 +32,11 @@ public class AppShell {
         this.withdrawalMoneyUseCaseHandler = withdrawalMoneyUseCaseHandler;
         this.displayAccountBalanceUseCaseHandler = displayAccountBalanceUseCaseHandler;
         this.calculateAccountInterestUseCaseHandler = calculateAccountInterestUseCaseHandler;
+
+        run();
     }
 
-    public void run() {
+    private void run() {
         var viewHandler = new CustomInputReader();
         var menuOperationsController = initializeMenuOperationsController(viewHandler);
 

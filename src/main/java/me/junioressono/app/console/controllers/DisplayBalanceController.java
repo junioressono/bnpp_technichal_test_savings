@@ -1,16 +1,16 @@
-package me.junioressono.app.shell.controllers;
+package me.junioressono.app.console.controllers;
 
-import me.junioressono.app.shell.AppShell;
-import me.junioressono.app.shell.util.CustomInputReader;
+import me.junioressono.app.console.AppConsole;
+import me.junioressono.app.console.util.CustomInputReader;
 import me.junioressono.core.use_cases.display_balance.DisplayAccountBalanceInputDTO;
 import me.junioressono.core.use_cases.display_balance.DisplayAccountBalanceOutputDTO;
 
 public class DisplayBalanceController implements Controller {
-    private final AppShell appShell;
+    private final AppConsole appConsole;
     private final CustomInputReader customInputReader;
 
-    public DisplayBalanceController(AppShell appShell, CustomInputReader customInputReader) {
-        this.appShell = appShell;
+    public DisplayBalanceController(AppConsole appConsole, CustomInputReader customInputReader) {
+        this.appConsole = appConsole;
         this.customInputReader = customInputReader;
     }
 
@@ -25,7 +25,7 @@ public class DisplayBalanceController implements Controller {
         var AccountId = customInputReader.readNumber("Enter your account identifier:");
         DisplayAccountBalanceInputDTO displayAccountBalanceInputDTO = new DisplayAccountBalanceInputDTO(AccountId);
         DisplayAccountBalanceOutputDTO displayAccountBalanceOutputDTO =
-                appShell.displayAccountBalanceUseCaseHandler.handle(displayAccountBalanceInputDTO);
+                appConsole.displayAccountBalanceUseCaseHandler.handle(displayAccountBalanceInputDTO);
 
         System.out.printf("""
                     \n
