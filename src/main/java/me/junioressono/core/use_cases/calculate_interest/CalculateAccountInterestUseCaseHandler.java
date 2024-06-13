@@ -14,7 +14,7 @@ public class CalculateAccountInterestUseCaseHandler implements CalculateAccountU
 
     @Override
     public CalculateAccountInterestOutputDTO handle(
-            CalculateAccountInterestInputDTO calculateAccountInterestInputDTO) throws InvalidAccountWithInterestException {
+            CalculateAccountInterestInputDTO calculateAccountInterestInputDTO) {
         AccountWithInterest account;
         try {
             account = (AccountWithInterest) accountRepository.getAccount(calculateAccountInterestInputDTO.accountId());

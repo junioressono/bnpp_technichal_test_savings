@@ -8,20 +8,24 @@ import java.util.Map;
 
 public class AccountRepositoryInMemoryHandler implements AccountRepository {
     private static AccountRepositoryInMemoryHandler INSTANCE;
-    public static Integer accountNumber = 100;
+    public static Integer ID_CURSOR = 0;
     private final Map<Integer, Account> accounts = new HashMap<>();
 
     @Override
     public Account create(Account account) {
-        account.setId(++accountNumber);
+        account.setId(++ID_CURSOR);
         accounts.put(account.getId(), account);
         return account;
     }
 
     @Override
     public Account update(Account account) {
-        accounts.put(account.getId(), account);
-        return account;
+        Account foundAccount = accounts.get(account.getId());
+        if (foundAccount != null) {
+            accounts.put(account.getId(), account);
+            return account;
+        }
+        return null;
     }
 
     @Override
@@ -40,4 +44,5 @@ public class AccountRepositoryInMemoryHandler implements AccountRepository {
         }
         return INSTANCE;
     }
+
 }

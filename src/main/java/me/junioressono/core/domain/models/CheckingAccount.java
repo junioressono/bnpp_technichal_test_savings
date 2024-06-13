@@ -1,7 +1,7 @@
 package me.junioressono.core.domain.models;
 
 import me.junioressono.core.domain.exceptions.InsufficientBalanceException;
-import me.junioressono.core.domain.exceptions.WithdrawalInvalidAmountException;
+import me.junioressono.core.domain.exceptions.InvalidWithdrawalAmountException;
 
 import java.math.BigDecimal;
 
@@ -13,9 +13,9 @@ public final class CheckingAccount extends Account{
 
 
     @Override
-    public void withdraw(BigDecimal amount) throws Exception {
+    public void withdraw(BigDecimal amount) {
         if (amount.signum() <= 0)
-            throw new WithdrawalInvalidAmountException();
+            throw new InvalidWithdrawalAmountException();
         if (balance.compareTo(amount) < 0)
             throw new InsufficientBalanceException();
 

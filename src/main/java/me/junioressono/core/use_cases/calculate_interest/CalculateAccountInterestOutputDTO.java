@@ -16,7 +16,6 @@ public record CalculateAccountInterestOutputDTO(
             return this;
         }
 
-
         public CalculateAccountInterestOutputDTO build() {
             return new CalculateAccountInterestOutputDTO(interestAmount);
         }

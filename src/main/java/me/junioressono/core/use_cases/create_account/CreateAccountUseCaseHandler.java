@@ -1,6 +1,5 @@
 package me.junioressono.core.use_cases.create_account;
 
-import me.junioressono.core.domain.exceptions.InvalidAccountTypeException;
 import me.junioressono.core.domain.exceptions.InvalidInitialBalanceException;
 import me.junioressono.core.domain.models.Account;
 import me.junioressono.core.domain.models.AccountType;
@@ -17,7 +16,7 @@ public class CreateAccountUseCaseHandler implements CreateAccountUseCase {
     }
 
     @Override
-    public CreateAccountOutputDTO handle(CreateAccountInputDTO createAccountInputDTO) throws Exception {
+    public CreateAccountOutputDTO handle(CreateAccountInputDTO createAccountInputDTO) {
 
         if (createAccountInputDTO.initialBalance().signum() <= 0)
             throw new InvalidInitialBalanceException();
@@ -34,7 +33,7 @@ public class CreateAccountUseCaseHandler implements CreateAccountUseCase {
                 .build();
     }
 
-    private Account getAccountToCreate(CreateAccountInputDTO createAccountInputDTO) throws InvalidAccountTypeException {
+    private Account getAccountToCreate(CreateAccountInputDTO createAccountInputDTO) {
         return switch(createAccountInputDTO.accountType()) {
             case AccountType.CHECKING_ACCOUNT -> new CheckingAccount(
                     createAccountInputDTO.name(), createAccountInputDTO.initialBalance()
@@ -42,7 +41,6 @@ public class CreateAccountUseCaseHandler implements CreateAccountUseCase {
             case AccountType.SAVING_ACCOUNT -> new SavingAccount(
                     createAccountInputDTO.name(), createAccountInputDTO.initialBalance()
             );
-            default -> throw new InvalidAccountTypeException();
         };
     }
 
