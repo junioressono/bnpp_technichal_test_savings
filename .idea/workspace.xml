@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ca319a6-9bbc-4471-93ff-211d5ad3b997" name="Changes" comment="Tests covered at 66%" />
+    <list default="true" id="4ca319a6-9bbc-4471-93ff-211d5ad3b997" name="Changes" comment="Some aspects refactored from app layer">
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/controllers/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/controllers/LeaveApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/junioressono/app/shell/controllers/LeaveApplicationController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,11 +88,11 @@
       <recent name="$PROJECT_DIR$/src/main/java/me/junioressono/core/domain" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="me.junioressono.app.shell.controllers" />
       <recent name="me.junioressono.core.domain.exceptions" />
       <recent name="me.junioressono.infra.repository.in_memory" />
       <recent name="me.junioressono.app.shell" />
       <recent name="me.junioressono.core.use_cases.create_account" />
-      <recent name="me.junioressono.core.use_cases.calculate_interest" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.Tests in 'me.junioressono'">
@@ -241,7 +244,7 @@
       <updated>1718187948177</updated>
       <workItem from="1718187949617" duration="36797000" />
       <workItem from="1718233711848" duration="3108000" />
-      <workItem from="1718237056252" duration="10296000" />
+      <workItem from="1718237056252" duration="13277000" />
     </task>
     <task id="LOCAL-00001" summary="First commit - Domain implementation DONE">
       <option name="closed" value="true" />
@@ -291,7 +294,23 @@
       <option name="project" value="LOCAL" />
       <updated>1718247318132</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Tests covered at 66%">
+      <option name="closed" value="true" />
+      <created>1718247432295</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1718247432295</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Some aspects refactored from app layer">
+      <option name="closed" value="true" />
+      <created>1718250329523</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1718250329523</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,10 +321,11 @@
     <MESSAGE value="First commit - Domain implementation DONE" />
     <MESSAGE value="Features implemented in bulk" />
     <MESSAGE value="Tests covered at 66%" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tests covered at 66%" />
+    <MESSAGE value="Some aspects refactored from app layer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some aspects refactored from app layer" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/bnpp_test$Tests_in__me_junioressono_.ic" NAME="Tests in 'me.junioressono' Coverage Results" MODIFIED="1718247118240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/bnpp_test$Tests_in__me_junioressono_.ic" NAME="Tests in 'me.junioressono' Coverage Results" MODIFIED="1718250192904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/bnpp_test$WithdrawalMoneyUseCaseHandlerTest.ic" NAME="WithdrawalMoneyUseCaseHandlerTest Coverage Results" MODIFIED="1718245698693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/bnpp_test$CreateAccountUseCaseHandlerTest.ic" NAME="CreateAccountUseCaseHandlerTest Coverage Results" MODIFIED="1718238519254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>

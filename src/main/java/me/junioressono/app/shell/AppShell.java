@@ -1,5 +1,7 @@
 package me.junioressono.app.shell;
 
+import me.junioressono.app.shell.controllers.*;
+import me.junioressono.app.shell.util.CustomInputReader;
 import me.junioressono.core.use_cases.calculate_interest.CalculateAccountInterestUseCaseHandler;
 import me.junioressono.core.use_cases.create_account.CreateAccountUseCase;
 import me.junioressono.core.use_cases.deposit_money.DepositMoneyUseCaseHandler;
@@ -9,14 +11,16 @@ import me.junioressono.core.use_cases.withdrawal_money.WithdrawalMoneyUseCaseHan
 import java.util.HashMap;
 import java.util.Map;
 
-public class AppShellController {
-    CreateAccountUseCase createAccountUseCase;
-    DepositMoneyUseCaseHandler depositMoneyUseCaseHandler;
-    WithdrawalMoneyUseCaseHandler withdrawalMoneyUseCaseHandler;
-    DisplayAccountBalanceUseCaseHandler displayAccountBalanceUseCaseHandler;
-    CalculateAccountInterestUseCaseHandler calculateAccountInterestUseCaseHandler;
+public class AppShell {
+    public CreateAccountUseCase createAccountUseCase;
+    public DepositMoneyUseCaseHandler depositMoneyUseCaseHandler;
+    public WithdrawalMoneyUseCaseHandler withdrawalMoneyUseCaseHandler;
+    public DisplayAccountBalanceUseCaseHandler displayAccountBalanceUseCaseHandler;
+    public CalculateAccountInterestUseCaseHandler calculateAccountInterestUseCaseHandler;
 
-    public AppShellController(
+    public boolean isRunning = true;
+
+    public AppShell(
             CreateAccountUseCase createAccountUseCase,
             DepositMoneyUseCaseHandler depositMoneyUseCaseHandler,
             WithdrawalMoneyUseCaseHandler withdrawalMoneyUseCaseHandler,
@@ -31,15 +35,8 @@ public class AppShellController {
     }
 
     public void run() {
-        var viewHandler = new ViewHandler();
-        Map<String, OperationsHandler> menuOperations = new HashMap<>();
-
-        menuOperations.put("1", OperationsHandler.CREATE_ACCOUNT);
-        menuOperations.put("2", OperationsHandler.DEPOSIT_MONEY);
-        menuOperations.put("3", OperationsHandler.WITHDRAW_MONEY);
-        menuOperations.put("4", OperationsHandler.DISPLAY_BALANCE);
-        menuOperations.put("5", OperationsHandler.CALCULATE_INTEREST);
-        menuOperations.put("6", OperationsHandler.QUIT_APPLICATION);
+        var viewHandler = new CustomInputReader();
+        var menuOperationsController = initializeMenuOperationsController(viewHandler);
 
         String menu = """
                 ==============================================
@@ -55,13 +52,11 @@ public class AppShellController {
                 
                 Enter your operation number [1-6] :
                 """;
-        while (viewHandler.isRunning) {
-            String operationNumber = viewHandler.readLine(menu);
-            if (menuOperations.containsKey(operationNumber)) {
+        while (isRunning) {
+            int operationNumber = viewHandler.readNumber(menu);
+            if (menuOperationsController.containsKey(operationNumber)) {
                 try {
-                    menuOperations
-                            .get(operationNumber)
-                            .handle(viewHandler, this);
+                    menuOperationsController.get(operationNumber).handle();
                 } catch (Exception e) {
                     System.out.printf("""
                                 \n
@@ -81,5 +76,16 @@ public class AppShellController {
                                 \n
                                 """, operationNumber);
         }
+    }
+
+    private Map<Integer, Controller> initializeMenuOperationsController(CustomInputReader customInputReader) {
+        Map<Integer, Controller> menuOperationsController = new HashMap<>();
+        menuOperationsController.put(1, new CreateAccountController(this, customInputReader));
+        menuOperationsController.put(2, new DepositMoneyController(this, customInputReader));
+        menuOperationsController.put(3, new WithdrawalMoneyController(this, customInputReader));
+        menuOperationsController.put(4, new DisplayBalanceController(this, customInputReader));
+        menuOperationsController.put(5, new CalculateInterestController(this, customInputReader));
+        menuOperationsController.put(6, new LeaveApplicationController(this));
+        return menuOperationsController;
     }
 }

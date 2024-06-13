@@ -13,7 +13,7 @@ public class DepositMoneyUseCaseHandler implements DepositMoneyUseCase {
     }
 
     @Override
-    public DepositMoneyOutputDTO handle(DepositMoneyInputDTO depositMoneyInputDTO) throws Exception {
+    public DepositMoneyOutputDTO handle(DepositMoneyInputDTO depositMoneyInputDTO) {
 
         if (depositMoneyInputDTO.amount().signum() <= 0)
             throw new InvalidDepositAmountException();

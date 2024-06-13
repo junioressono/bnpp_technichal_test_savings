@@ -1,15 +1,15 @@
-package me.junioressono.app.shell;
+package me.junioressono.app.shell.util;
 
 import java.util.Scanner;
 
-public class ViewHandler {
-    public boolean isRunning = true;
+public class CustomInputReader {
     private final Scanner scanner = new Scanner(System.in);
 
-    public String readLine(String message) {
+    public String readString(String message) {
         System.out.print(message);
         return scanner.next();
     }
+
     public int readNumber(String message) {
         System.out.print(message);
         return scanner.nextInt();

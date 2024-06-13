@@ -1,6 +1,6 @@
 package me.junioressono;
 
-import me.junioressono.app.shell.AppShellController;
+import me.junioressono.app.shell.AppShell;
 import me.junioressono.core.ports.secondary.AccountRepository;
 import me.junioressono.core.use_cases.calculate_interest.CalculateAccountInterestUseCaseHandler;
 import me.junioressono.core.use_cases.create_account.CreateAccountUseCase;
@@ -27,7 +27,7 @@ public class Main {
 
         var calculateAccountInterestUseCaseHandler = CalculateAccountInterestUseCaseHandler.getInstance(accountRepository);
 
-        AppShellController app = new AppShellController(
+        AppShell app = new AppShell(
                 createAccountUseCase,
                 depositMoneyUseCaseHandler,
                 withdrawalMoneyUseCaseHandler,
