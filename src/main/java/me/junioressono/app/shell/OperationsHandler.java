@@ -1,6 +1,6 @@
 package me.junioressono.app.shell;
 
-import me.junioressono.core.domain.exceptions.InvalidAccountTypeException;
+import me.junioressono.app.shell.exceptions.InvalidAccountTypeException;
 import me.junioressono.core.domain.models.AccountType;
 import me.junioressono.core.use_cases.calculate_interest.CalculateAccountInterestInputDTO;
 import me.junioressono.core.use_cases.calculate_interest.CalculateAccountInterestOutputDTO;

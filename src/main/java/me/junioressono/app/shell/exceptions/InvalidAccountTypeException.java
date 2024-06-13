@@ -1,6 +1,6 @@
-package me.junioressono.core.domain.exceptions;
+package me.junioressono.app.shell.exceptions;
 
-public class InvalidAccountTypeException extends Exception {
+public class InvalidAccountTypeException extends RuntimeException {
     public InvalidAccountTypeException() {
         super(
         """

@@ -1,7 +1,7 @@
 package me.junioressono.core.domain.exceptions;
 
-public class WithdrawalInvalidAmountException extends Exception {
-    public WithdrawalInvalidAmountException() {
+public class InvalidWithdrawalAmountException extends RuntimeException {
+    public InvalidWithdrawalAmountException() {
         super("Amount to withdraw must be positive and non-zero");
     }
 }

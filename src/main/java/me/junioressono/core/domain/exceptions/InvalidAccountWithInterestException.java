@@ -1,6 +1,6 @@
 package me.junioressono.core.domain.exceptions;
 
-public class InvalidAccountWithInterestException extends Exception {
+public class InvalidAccountWithInterestException extends RuntimeException {
     public InvalidAccountWithInterestException() {
         super(
         """

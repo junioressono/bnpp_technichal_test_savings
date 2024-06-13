@@ -13,7 +13,6 @@ public sealed abstract class Account permits SavingAccount, CheckingAccount {
         if (initialBalance.signum() < 0)
             throw new IllegalArgumentException("Amount of deposit must be positive or zero");
 
-        //this.id = UUID.randomUUID().toString();
         this.customerName = customerName;
         this.balance = initialBalance;
     }
@@ -40,7 +39,7 @@ public sealed abstract class Account permits SavingAccount, CheckingAccount {
         balance = balance.add(amount);
     }
 
-    public abstract void withdraw(BigDecimal amount) throws Exception;
+    public abstract void withdraw(BigDecimal amount);
 
     @Override
     public String toString() {
